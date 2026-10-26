@@ -1,0 +1,18 @@
+{
+  "total_uploaded_jdx": 206,
+  "unique_compounds_in_app": 200,
+  "duplicates_removed_from_catalog": 6,
+  "parse_errors": 0,
+  "counts_by_group": {
+    "Ácidos carboxílicos": 20,
+    "Alcanos": 20,
+    "Alcoholes": 20,
+    "Aldehídos": 20,
+    "Alquenos": 20,
+    "Alquinos": 20,
+    "Amidas": 20,
+    "Aminas": 20,
+    "Cetonas": 20,
+    "Ésteres": 20
+  }
+}

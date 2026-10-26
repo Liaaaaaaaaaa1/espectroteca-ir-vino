@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Espectroteca IR · Química Farmacéutica</title>
+<style>
+:root{--bg:#08080b;--panel:#111116;--panel2:#17171e;--ink:#fff8fc;--muted:#c4aab8;--line:#482336;--pink:#f06aa8;--pink2:#a92f69;--pinkwash:#301522;--shadow:0 12px 34px #0006}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}header{padding:78px max(18px,calc((100vw - 1440px)/2)) 22px;border-bottom:1px solid var(--line);background:#0b0a0e}.sticky-nav{position:fixed;inset:0 0 auto 0;z-index:1000;display:flex;align-items:center;gap:8px;padding:12px max(14px,calc((100vw - 1440px)/2));background:rgba(8,8,11,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);box-shadow:0 8px 24px #0004}.sticky-nav a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:750;padding:10px 13px;border:1px solid transparent;border-radius:10px;white-space:nowrap}.sticky-nav a:hover,.sticky-nav a:focus-visible{border-color:var(--pink);background:var(--pinkwash);outline:none}.sticky-nav .nav-brand{color:var(--pink);margin-right:auto;letter-spacing:.04em}.brand{display:flex;align-items:center;gap:12px;margin-bottom:18px}.logo{width:44px;height:44px;display:grid;place-items:center;background:var(--pink2);border-radius:13px;font-weight:900;font-size:19px}.brand b{display:block;font-size:17px}.brand small{color:var(--muted);letter-spacing:.12em;font-size:10px}.hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.8fr);gap:26px;align-items:center;border:1px solid var(--line);border-radius:25px;padding:clamp(22px,4vw,44px);background:radial-gradient(ellipse at 15% 0%,#351426 0,transparent 65%),linear-gradient(135deg,#151016,#0d0c11)}.eyebrow{color:var(--pink);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.hero h1{font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-.035em;margin:13px 0}.hero p{max-width:700px;color:#e0cbd6;line-height:1.7;margin:0}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.btn{border:1px solid var(--line);background:#171117;color:var(--ink);padding:11px 15px;border-radius:11px;cursor:pointer;font:inherit;font-size:13px;font-weight:750;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:7px}.btn.primary{background:var(--pink2);border-color:var(--pink2);color:white}.btn:hover{border-color:var(--pink)}.preview{background:#0b0b10;border:1px solid #49253a;border-radius:20px;padding:17px;box-shadow:var(--shadow);transform:rotate(1deg)}.preview small{color:var(--muted);font-size:10px}.preview h3{margin:8px 0;color:var(--pink);font-size:16px}.preview svg{width:100%;height:auto;display:block}.wrap{max-width:1440px;margin:26px auto;padding:0 20px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:14px;margin:32px 0 15px}.section-head h2{margin:4px 0;font-size:25px}.section-head p{margin:5px 0 0;color:var(--muted);font-size:13px}.searchbar{display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:10px;margin:18px 0}.field{width:100%;border:1px solid var(--line);border-radius:12px;padding:13px 14px;background:#101015;color:var(--ink);font:inherit;outline:none}.field:focus{border-color:var(--pink);box-shadow:0 0 0 3px #f06aa822}.group-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.group-card{border:1px solid var(--line);background:linear-gradient(145deg,#151217,#0e0d12);border-radius:16px;padding:15px;min-width:0;cursor:pointer;color:var(--ink);text-align:left;transition:.18s;overflow:hidden}.group-card:hover,.group-card.active{border-color:var(--pink);background:linear-gradient(145deg,#281421,#111015);transform:translateY(-2px)}.formula-badge{display:inline-flex;align-items:center;justify-content:center;max-width:100%;min-width:42px;min-height:34px;padding:5px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border:1px solid #71304e;background:#2b1522;color:#ff9ac7;border-radius:9px;font-weight:850;font-size:13px;letter-spacing:-.03em}.group-card strong{display:block;margin-top:12px;font-size:14px;overflow-wrap:anywhere}.group-card .explore{display:block;color:#f39bc1;font-size:11px;margin-top:10px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}.catalog-panel{margin-top:26px}.catalog-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.catalog-head h2{margin:0;font-size:22px}.count{color:var(--muted);font-size:12px}.compound-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.compound{border:1px solid var(--line);background:#0d0c11;border-radius:13px;padding:13px;text-align:left;cursor:pointer;color:inherit;min-width:0;transition:.15s}.compound:hover,.compound.active{border-color:var(--pink);background:#21121b}.compound .compound-group{display:inline-flex;align-items:center;max-width:100%;margin-top:12px;padding:6px 10px;border:1px solid #71304e;border-radius:999px;background:#2b1522;color:#ff9ac7;font-size:12px;line-height:1.2;white-space:normal;overflow-wrap:anywhere}.compound .compound-formula{overflow-wrap:anywhere}.compound{height:100%}.compound strong{display:block;font-size:14px;white-space:normal;overflow-wrap:anywhere;text-transform:none}.compound small{display:block;color:var(--muted);margin-top:6px;font-size:11px}.compound .compound-state{color:#8e4358!important;font-size:11px}.group-theory{margin-top:17px;background:#0c0b10;border:1px solid #49263a;border-radius:15px;padding:18px}.group-theory h3{margin:0 0 8px;color:var(--pink);font-size:18px}.group-theory p{color:#e4d1db;line-height:1.65;margin:7px 0}.band-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:12px}.band-table th,.band-table td{padding:10px;text-align:left;border-bottom:1px solid #39212e}.band-table th{color:#ff9ac7;font-weight:800}.detail{margin-top:24px;scroll-margin-top:20px}.empty{padding:32px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}.details-top{display:flex;justify-content:space-between;align-items:start;gap:15px}.details-top h2{font-size:28px;margin:0 0 7px}.sub{color:var(--muted);font-size:13px}.meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:17px 0}.meta div{background:#0c0b10;border:1px solid var(--line);border-radius:11px;padding:11px;min-width:0}.meta span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.06em}.meta b{display:block;font-size:13px;margin-top:6px;overflow-wrap:anywhere}.chartbox{border:1px solid var(--line);border-radius:15px;padding:12px;background:#0b0b10}.chart-title{display:flex;justify-content:space-between;gap:10px;align-items:center;color:var(--muted);font-size:12px;margin:2px 7px 10px}.chart-mode{display:inline-flex;gap:3px;padding:3px;border:1px solid #71304e;background:#24121c;border-radius:999px;flex-shrink:0}.chart-mode button{border:0;background:transparent;color:#d6b6c6;border-radius:999px;padding:7px 12px;font:inherit;font-size:12px;font-weight:800;cursor:pointer}.chart-mode button.active{background:#f06aa8;color:#351021}.chart-mode button:focus-visible{outline:2px solid #ff9ac7;outline-offset:2px}.chart{width:100%;height:auto;display:block}.interpretation{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:14px;margin-top:15px}.theory-card{background:#0c0b10;border:1px solid var(--line);border-radius:14px;padding:16px}.theory-card h3{margin:0 0 10px;color:var(--pink);font-size:16px}.theory-card p,.theory-card li{color:#e2ced8;font-size:13px;line-height:1.65}.theory-card ul{padding-left:19px;margin:8px 0}.peak-list{display:flex;flex-direction:column;gap:8px}.peak{border:1px solid #39212e;border-radius:10px;padding:10px;background:#111016}.peak b{color:#ff9ac7}.note{font-size:11px;color:var(--muted);line-height:1.55;margin-top:12px}.theory-page{margin-top:28px}.theory-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.theory-page h2{margin-top:0}.theory-page h3{color:var(--pink)}.footer{color:#9d8492;font-size:11px;margin:24px 2px 36px;line-height:1.6}.hide{display:none!important}@media(max-width:1050px){.group-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.compound-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{grid-template-columns:1fr 300px}}@media(max-width:760px){.sticky-nav{gap:3px;padding:9px 8px;overflow-x:auto}.sticky-nav a{font-size:11px;padding:9px 8px}.sticky-nav .nav-brand{display:none}header{padding-top:68px}.hero{grid-template-columns:1fr}.preview{max-width:500px;width:100%;transform:none}.group-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.compound-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.interpretation,.theory-columns{grid-template-columns:1fr}.searchbar{grid-template-columns:1fr}.details-top{display:block}.meta{grid-template-columns:1fr 1fr}.details-top .actions{margin-top:12px}}@media(max-width:430px){.wrap{padding:0 12px}.group-grid,.compound-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.group-card{padding:11px}.group-card strong{font-size:12px}.formula-badge{font-size:12px;min-width:0;padding:4px 6px}.meta{grid-template-columns:1fr}.panel{padding:13px}}
+
+/* Identidad visual editorial inspirada en rosa empolvado, vino y crema.
+   Solo estilos: se conservan intactos el HTML funcional y la lógica JavaScript. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+:root{
+ --bg:#160d12;
+ --panel:#21131a;
+ --panel2:#2b1821;
+ --ink:#fff4ed;
+ --muted:#d6b6bd;
+ --line:#65303e;
+ --pink:#f1a7b8;
+ --pink2:#a21d36;
+ --pinkwash:#421c29;
+ --shadow:0 16px 38px #09040766;
+}
+html{scroll-padding-top:90px}
+body{
+ background:
+  radial-gradient(ellipse at 8% 2%,#58233355 0,transparent 28rem),
+  radial-gradient(ellipse at 96% 35%,#3c172455 0,transparent 30rem),
+  var(--bg);
+ color:var(--ink);
+ font-family:'DM Sans',Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+h1,h2,h3,.hero h1,.section-head h2,.catalog-head h2,.details-top h2,.group-theory h3,.theory-card h3{
+ font-family:'Playfair Display',Georgia,'Times New Roman',serif;
+ font-weight:600;
+ letter-spacing:-.025em;
+}
+header{
+ background:linear-gradient(180deg,#261018 0%,#160d12 100%);
+ border-bottom:1px solid #7e3949;
+}
+.sticky-nav{
+ background:rgba(22,13,18,.94);
+ border-bottom:1px solid #8e4352;
+ box-shadow:0 8px 26px #08030688;
+}
+.sticky-nav a{border-radius:4px;letter-spacing:.015em}
+.sticky-nav a:hover,.sticky-nav a:focus-visible{background:#4a1c2a;border-color:#e9a0b2}
+.sticky-nav .nav-brand{font-family:'Playfair Display',Georgia,serif;font-size:16px;letter-spacing:.035em}
+.logo{
+ background:var(--pink2);
+ border:1px solid #f1a7b8;
+ border-radius:50% 50% 42% 42%;
+ box-shadow:0 5px 18px #0005;
+}
+.hero{
+ position:relative;
+ overflow:hidden;
+ border-color:#874453;
+ border-radius:4px 28px 4px 28px;
+ background:
+   radial-gradient(circle at 96% 0%,#f1a7b82a 0 2px,transparent 3px),
+   linear-gradient(115deg,#351722 0%,#24131b 58%,#411b28 100%);
+ box-shadow:var(--shadow);
+}
+.hero:before{
+ content:"";
+ position:absolute;
+ width:240px;height:240px;
+ right:-95px;top:-135px;
+ border:1px solid #f1a7b866;
+ border-radius:50%;
+ pointer-events:none;
+}
+.hero:after{
+ content:"IR  •  SPECTROSCOPY";
+ position:absolute;
+ right:20px;bottom:10px;
+ color:#f1a7b81b;
+ font-family:'Playfair Display',Georgia,serif;
+ font-size:clamp(16px,2vw,25px);
+ letter-spacing:.16em;
+ pointer-events:none;
+}
+.eyebrow{color:#f1a7b8;letter-spacing:.2em}
+.hero h1{font-size:clamp(34px,4.2vw,54px);line-height:1.06}
+.hero p{color:#f0dbe0}
+.btn{
+ border-radius:3px 12px 3px 12px;
+ border-color:#7b3a49;
+ background:#29151e;
+ transition:transform .18s,border-color .18s,background .18s;
+}
+.btn.primary{
+ background:var(--pink2);
+ border-color:#e07b91;
+ box-shadow:0 5px 14px #08030655;
+}
+.btn:hover{border-color:#f1a7b8;transform:translateY(-1px)}
+.preview{
+ border:1px solid #a65a69;
+ border-radius:4px 20px 4px 20px;
+ background:linear-gradient(145deg,#f8dce0,#f2b9c4);
+ color:#521725;
+ box-shadow:0 14px 30px #08030644;
+}
+.preview small{color:#814252}
+.preview h3{color:#941c35}
+.wrap{position:relative}
+.section-head{border-bottom:1px solid #65303e;padding-bottom:12px}
+.section-head h2,.catalog-head h2{font-size:clamp(23px,2.5vw,30px)}
+.section-head p{color:var(--muted)}
+.field{
+ border-color:#79404c;
+ border-radius:4px 12px 4px 12px;
+ background:#21131a;
+}
+.field:focus{border-color:#f1a7b8;box-shadow:0 0 0 3px #f1a7b822}
+.group-grid{gap:14px}
+.group-card{
+ position:relative;
+ border-color:#713746;
+ border-radius:4px 16px 4px 16px;
+ background:linear-gradient(145deg,#2b1821,#1c1117);
+ box-shadow:0 8px 18px #09040733;
+}
+.group-card:after{
+ content:"";
+ position:absolute;top:0;right:0;width:28px;height:28px;
+ border-top:1px solid #e7a0af;border-right:1px solid #e7a0af;
+ opacity:.65;pointer-events:none;
+}
+.group-card:hover,.group-card.active{
+ border-color:#f1a7b8;
+ background:linear-gradient(145deg,#49202d,#26131c);
+ box-shadow:0 10px 24px #08030666;
+}
+.formula-badge{
+ border-color:#c66c81;
+ background:#f2b7c3;
+ color:#711b30;
+ border-radius:4px 10px 4px 10px;
+}
+.group-card .explore{color:#f1a7b8}
+.panel{
+ background:linear-gradient(145deg,#24151c,#1b1016);
+ border-color:#65303e;
+ border-radius:4px 18px 4px 18px;
+}
+.compound{
+ border-color:#67303f;
+ border-radius:4px 14px 4px 14px;
+ background:#1b1016;
+}
+.compound:hover,.compound.active{
+ border-color:#f1a7b8;
+ background:#3a1b27;
+ box-shadow:0 7px 20px #09040755;
+}
+.compound .compound-group{
+ border-color:#c36c80;
+ background:#f0b6c2;
+ color:#741c31;
+ border-radius:3px 999px 999px 999px;
+ font-weight:700;
+}
+.group-theory,.theory-card,.meta div,.chartbox{
+ background:#1b1016;
+ border-color:#6c3543;
+ border-radius:4px 16px 4px 16px;
+}
+.group-theory h3,.theory-card h3{color:#f1a7b8}
+.group-theory p,.theory-card p{color:#f0dce0}
+.band-table th{color:#f1a7b8}
+.band-table th,.band-table td{border-bottom-color:#48232f}
+.meta div{border-color:#65303e}
+.chartbox{background:#1b1016}
+.chart-title{color:#d6b6bd}
+.note{color:#d6b6bd}
+.empty{border-color:#8b4a59}
+@media(max-width:760px){
+ .hero{border-radius:4px 20px 4px 20px}
+ .hero:after{font-size:13px;right:12px}
+ .sticky-nav{gap:3px;padding:8px 10px;overflow-x:auto}
+ .sticky-nav a{padding:9px 10px;font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*:before,*:after{transition:none!important}
+}
+
+
+/* Ajuste solicitado: solo el color del texto de las tres tarjetas de metadatos */
+.meta span, .meta b { color: #ffffff !important; }
+</style>
+<style id="girly-solid-palette">
+:root{--bg:#4b1023;--panel:#7d1838;--panel2:#a92b4b;--ink:#fff8ed;--muted:#f5cbd0;--line:#d45b78;--pink:#ff9eaf;--pink2:#c82f50;--pinkwash:#68162f;--shadow:0 12px 34px #31071855}
+body{background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+header{background:#5d122b;border-bottom-color:#df7188}
+.sticky-nav{background:rgba(75,16,35,.97);border-bottom:2px solid #e86e8a;box-shadow:0 7px 22px #31071855}
+.sticky-nav a{font-family:Arial,Helvetica,sans-serif;border-radius:999px}
+.sticky-nav a:hover,.sticky-nav a:focus-visible{background:#c82f50;border-color:#ffb7c4}
+.sticky-nav .nav-brand{color:#ffb7c4;font-family:Georgia,'Times New Roman',serif;letter-spacing:.02em}
+.brand b,.hero h1,.section-head h2,.catalog-head h2,.panel h2,.panel h3{font-family:Georgia,'Times New Roman',serif;letter-spacing:-.025em}
+.logo{background:#f18da4;color:#5d122b;border:2px solid #ffe4dc;border-radius:50%}
+.hero{border:2px solid #f1a0b1;background:#f5b8c3;color:#6b1831;box-shadow:inset 0 0 0 7px #f9d9d7;position:relative;overflow:hidden}
+.hero:after{content:'✦  ♡  ✦';position:absolute;right:24px;bottom:13px;color:#b52549;font-size:20px;letter-spacing:12px;opacity:.55;pointer-events:none}
+.hero .eyebrow{color:#a91f43}
+.hero h1{color:#7b1738}
+.hero p{color:#76243b}
+.btn{background:#f8d9d5;color:#761a36;border-color:#d85b78;border-radius:999px}
+.btn.primary{background:#b92549;border-color:#b92549;color:#fff8ed}
+.btn:hover{border-color:#fff0e8;box-shadow:0 0 0 3px #ffb4c455}
+.preview{background:#fff0e7;border:2px solid #d95b78;color:#701832;box-shadow:8px 8px 0 #c43c59;transform:rotate(1deg)}
+.preview h3{color:#b52247}
+.preview small{color:#91405a}
+.wrap{position:relative}
+.section-head .eyebrow,.eyebrow{color:#ffb7c4}
+.section-head h2,.catalog-head h2{color:#fff3e8}
+.searchbar .field,.field{background:#5e142d;color:#fff8ed;border-color:#d45b78}
+.field::placeholder{color:#f3b8c5}
+.field:focus{border-color:#ffd3d8;box-shadow:0 0 0 3px #ffb2c633}
+.group-card{background:#8e1e40;border-color:#d95676;border-radius:19px;box-shadow:0 4px 0 #390b1c}
+.group-card:nth-child(4n+2){background:#a62a4b}
+.group-card:nth-child(4n+3){background:#701831}
+.group-card:nth-child(4n){background:#bd3655}
+.group-card:hover,.group-card.active{background:#d64a69;border-color:#ffe0dc;box-shadow:0 5px 0 #450d22;transform:translateY(-2px)}
+.formula-badge{background:#f7d5d0;color:#8d1b3b;border-color:#fff0e8;border-radius:8px}
+.group-card .explore{color:#ffe2df}
+.panel,.catalog-panel{background:#701831;border-color:#d95676;box-shadow:0 8px 0 #3d0b1d}
+.compound{background:#8a1c3d;border-color:#d95676;border-radius:16px}
+.compound:nth-child(3n+2){background:#9d2446}
+.compound:nth-child(3n){background:#5d142c}
+.compound:hover,.compound.active{background:#c33153;border-color:#ffd6d9;box-shadow:0 0 0 2px #ffb4c455}
+.compound .group-tag,.compound .tag,.group-tag{background:#f8d9d5;color:#851b3a;border-color:#ffede6}
+.count,.section-head p,.muted{color:#f4c8d0}
+.badge,.pill{border-radius:999px}
+.table,.spectrum-card,.theory-card{border-color:#d95676}
+.spectrum-card,.theory-card{background:#64152e}
+button:focus-visible,a:focus-visible{outline:2px solid #ffe6df;outline-offset:3px}
+@media(max-width:700px){.hero{grid-template-columns:1fr}.hero:after{font-size:15px;right:10px}.sticky-nav{gap:4px;padding:8px}.sticky-nav a{padding:8px 10px;font-size:12px}}
+</style>
+
+
+<style id="balanced-rose-cream-theme">
+:root{
+ --bg:#f8dfe0;--panel:#fff0e7;--panel2:#f7c4cd;--ink:#5b1028;--muted:#8e4358;
+ --line:#d66b83;--pink:#e95d86;--pink2:#a51f43;--pinkwash:#f9c4ce;--shadow:0 12px 28px #68152b20;
+ --cream:#fff0e7;--wine:#65132c;--rose:#f3a5b5;--red:#c62c4e;
+}
+html{background:var(--bg);scroll-padding-top:88px}
+body{background:var(--bg);color:var(--ink)}
+header{background:var(--wine);color:#fff0e7;border-bottom:3px solid var(--rose)}
+.brand small{color:#ffe1e5}
+.logo{background:var(--rose);color:var(--wine);border:2px solid var(--cream);box-shadow:0 4px 0 #9c2746}
+.sticky-nav{background:rgba(101,19,44,.97);border-bottom:2px solid var(--rose);box-shadow:0 6px 18px #5b102833}
+.sticky-nav a{color:#fff0e7;border:1px solid #d96a84;border-radius:999px;background:#7d1938;transition:background .18s,color .18s,transform .18s}
+.sticky-nav a:hover,.sticky-nav a:focus-visible{background:#f5bdc8;color:#65132c;border-color:#fff0e7;transform:translateY(-1px)}
+.sticky-nav .nav-brand{color:#ffd4dc;background:transparent;border-color:transparent}
+.hero{background:#f3b7c2;color:#70142f;border:3px solid #f7d8d6;box-shadow:0 9px 0 #c84a68;border-radius:26px 36px 8px 36px}
+.hero:before{border-color:#d55c7b66}.hero:after{color:#b52e52}
+.hero .eyebrow,.hero .kicker,.hero small{color:#9d2143}
+.hero h1{color:#781632}
+.hero p{color:#75253e}
+.preview{background:var(--cream);color:var(--wine);border:2px solid #d94e73;box-shadow:8px 8px 0 #c73d60}
+.preview h3{color:#a51f43}
+.btn{background:#fff0e7;color:#781632;border:1px solid #d94e73;border-radius:999px;box-shadow:0 3px 0 #dca0ab}
+.btn:hover,.btn:focus-visible{background:#f8c4ce;color:#65132c;border-color:#a51f43}
+.btn.primary{background:#bd244b;color:#fff7f0;border-color:#bd244b;box-shadow:0 4px 0 #7c1734}
+.btn.primary:hover,.btn.primary:focus-visible{background:#e95d86;color:#5b1028;border-color:#fff0e7}
+section,main{color:var(--ink)}
+.section-head h2,.catalog-head h2,.details-top h2{color:#781632}
+.section-head p,.catalog-head p,.muted,.subtle{color:#8e4358}
+.panel,.group-theory,.spectrum-card{background:#fff0e7;color:#5b1028;border:1px solid #d66b83;box-shadow:var(--shadow)}
+.group-card{background:#f8cbd2;color:#65132c;border:1px solid #d66b83;box-shadow:0 4px 0 #e6a0ae}
+.group-card:nth-child(4n+2){background:#fff0e7}
+.group-card:nth-child(4n+3){background:#ef9fb1}
+.group-card:nth-child(4n){background:#eeb8c1}
+.group-card:hover,.group-card.active{background:#bd244b;color:#fff0e7;border-color:#781632;box-shadow:0 5px 0 #781632}
+.formula-badge{background:#fff0e7;color:#a51f43;border:1px solid #d66b83}
+.group-card .explore{color:#9d2143}.group-card:hover .explore,.group-card.active .explore{color:#ffe2e6}
+.compound{background:#fff0e7;color:#5b1028;border:1px solid #d66b83;box-shadow:0 3px 0 #e7b0b9}
+.compound:nth-child(3n+2){background:#f8cbd2}
+.compound:nth-child(3n){background:#f3b2bf}
+.compound:hover,.compound.active{background:#bd244b;color:#fff0e7;border-color:#781632;box-shadow:0 4px 0 #781632}
+.compound small,.compound .compound-formula{color:#8e4358}.compound.active small,.compound:hover small{color:#ffe3e8}
+.formula-badge,.tag,.pill,.group-pill{border-color:#d66b83}
+.tag,.pill,.group-pill{background:#f8cbd2;color:#781632}
+input,select,textarea,.search-input{background:#fff0e7!important;color:#5b1028!important;border:1px solid #d66b83!important}
+input::placeholder,textarea::placeholder{color:#a56878!important}
+.theory-card{background:#f8cbd2!important;color:#5b1028;border:1px solid #d66b83;box-shadow:0 4px 0 #e9a6b3}
+.theory-card:nth-child(2n){background:#fff0e7!important}
+.theory-card h3{color:#a51f43!important}
+.theory-card p,.theory-card li{color:#6f263d!important}
+.peak{background:#f3b2bf!important;color:#5b1028!important;border:1px solid #d66b83!important;border-radius:14px;padding:14px;box-shadow:0 3px 0 #df91a3}
+.peak b{color:#a51f43!important}.peak small,.peak p{color:#6f263d!important}
+.note,.callout,.info-box{background:#fff0e7!important;color:#6b2038!important;border:1px solid #d66b83!important}
+.chart-wrap,.chart-panel{background:#fff0e7!important;border:1px solid #d66b83!important;border-radius:16px}
+.chart{background:#fff0e7!important;border-radius:10px}
+footer{background:#65132c;color:#ffe7e9;border-top:2px solid #e99aab}
+button:focus-visible,a:focus-visible{outline:3px solid #bd244b;outline-offset:3px}
+@media(max-width:760px){.sticky-nav a{background:#7d1938;border-color:#d96a84}.hero{box-shadow:0 5px 0 #c84a68}.preview{box-shadow:5px 5px 0 #c73d60}}
+@media(prefers-reduced-motion:reduce){.sticky-nav a,.btn{transition:none}}
+</style>
+
+</head><body>
+<nav class="sticky-nav" aria-label="Navegación principal"><a class="nav-brand" href="#home">Espectroteca IR</a><a href="#home" data-scroll="home">Inicio</a><a href="#library" data-scroll="library">Grupos funcionales</a><a href="#catalogSection" data-scroll="catalogSection">Compuestos</a><a href="#detail" data-scroll="detail">Espectro</a><a href="#theoryPage" data-scroll="theoryPage">Teoría IR</a></nav><header><div class="brand"><div class="logo">IR</div><div><b>Espectroteca</b><small>QUÍMICA FARMACÉUTICA</small></div></div>
+<section class="hero" id="home"><div><div class="eyebrow">Tu espacio de estudio · IR spectroscopy</div><h1>Comprende los espectros,<br>conecta la química.</h1><p>Explora los grupos funcionales, aprende a reconocer bandas características y consulta espectros infrarrojos para relacionar las señales con la estructura molecular.</p><div class="actions"><button class="btn primary" id="exploreBtn">Explorar biblioteca →</button><button class="btn" id="theoryBtn">Repasar teoría IR</button></div></div><div class="preview"><small>INFRARED SPECTRUM · VISTA PREVIA</small><h3>Gráfica espectral</h3><svg viewBox="0 0 440 180" role="img" aria-label="Gráfica ilustrativa de un espectro infrarrojo"><g stroke="#382130" stroke-width="1"><path d="M20 20H425M20 55H425M20 90H425M20 125H425M20 160H425"/><path d="M20 20V160M90 20V160M160 20V160M230 20V160M300 20V160M370 20V160M425 20V160"/></g><path d="M20 36 C45 34 50 38 65 36 S95 39 110 35 S130 37 145 36 L160 37 L168 132 L176 37 S210 35 230 36 L245 40 L252 90 L260 40 S285 35 310 36 L325 38 L332 146 L340 37 S380 35 425 36" fill="none" stroke="#f06aa8" stroke-width="2.6" stroke-linejoin="round"/><text x="20" y="176" fill="#c4aab8" font-size="10">4000</text><text x="397" y="176" fill="#c4aab8" font-size="10">400 cm⁻¹</text></svg><small>Vista ilustrativa · bandas hacia abajo</small></div></section></header>
+<main class="wrap"><section id="library"><div class="section-head"><div><div class="eyebrow">Biblioteca</div><h2>Explora por grupo funcional</h2><p>Selecciona una categoría para ver sus compuestos y repasar sus bandas características.</p></div><span class="count" id="groupCount">10 grupos</span></div><div id="groupCards" class="group-grid"></div>
+<div class="searchbar"><input id="search" class="field" type="search" placeholder="Buscar compuesto o fórmula molecular…"><select id="sort" class="field"><option value="name">Ordenar: nombre A–Z</option><option value="formula">Ordenar: fórmula</option></select></div>
+<section class="panel catalog-panel" id="catalogSection"><div class="catalog-head"><h2 id="catalogTitle">Selecciona un grupo funcional</h2><span class="count" id="catalogCount"></span></div><div id="catalog" class="compound-grid"></div><div id="noResults" class="empty hide">No se encontraron compuestos. Prueba otra búsqueda.</div><div id="groupTheory" class="group-theory hide"></div></section></section>
+<section class="panel detail" id="detail"><div class="empty"><strong>Selecciona un compuesto</strong><p>La ficha, el espectro y una guía de interpretación aparecerán aquí.</p></div></section>
+<section class="panel theory-page" id="theoryPage"><div class="eyebrow">Aprendizaje</div><h2>Cómo interpretar un espectro infrarrojo medio</h2><p style="color:var(--muted);line-height:1.7">La región infrarroja media suele abarcar aproximadamente 4000–400 cm⁻¹. Cada banda corresponde a vibraciones moleculares que absorben energía. La posición, forma e intensidad ayudan a proponer grupos funcionales; ninguna banda aislada confirma por sí sola la identidad completa de un compuesto.</p><div class="theory-columns"><article class="theory-card"><h3>1. Lee los ejes</h3><ul><li>El eje horizontal indica número de onda (cm⁻¹), normalmente decreciente de 4000 a 400.</li><li>En transmitancia (%T), las absorciones suelen verse como valles hacia abajo.</li><li>En absorbancia, las absorciones suelen representarse como señales hacia arriba.</li></ul></article><article class="theory-card"><h3>2. Revisa las zonas principales</h3><ul><li><b>4000–2500 cm⁻¹:</b> enlaces X–H como O–H, N–H y C–H.</li><li><b>2500–2000 cm⁻¹:</b> enlaces triples, por ejemplo C≡C; los nitrilos quedan fuera del catálogo actual.</li><li><b>1850–1500 cm⁻¹:</b> región importante para carbonilos C=O y dobles enlaces C=C.</li><li><b>1500–400 cm⁻¹:</b> región de huella dactilar, útil para comparar el patrón global.</li></ul></article><article class="theory-card"><h3>3. Observa la forma y la intensidad</h3><p>Una banda ancha puede asociarse, por ejemplo, a O–H con puentes de hidrógeno; una señal estrecha e intensa suele ser característica de ciertos enlaces polares como C=O. La intensidad depende también de la muestra y de la técnica experimental.</p></article><article class="theory-card"><h3>4. Confirma con varias señales</h3><p>Interpreta las bandas en conjunto: busca la señal principal del grupo funcional, verifica bandas complementarias y contrasta el patrón con la estructura esperada. La región de huella dactilar se utiliza sobre todo para comparar el espectro completo con una referencia.</p></article></div><p class="note">Fuentes de consulta: <a style="color:var(--pink)" href="https://www.niu.edu/clas/chembio/research/analytical-lab/ftir/ir-frequencies-table.shtml" target="_blank" rel="noopener">Northern Illinois University · IR frequencies</a> · <a style="color:var(--pink)" href="https://chemtl.york.ac.uk/data-analysis-reporting/analytical-techniques/ir/ir-spectroscopy-absorption-table" target="_blank" rel="noopener">University of York · IR absorption table</a> · <a style="color:var(--pink)" href="https://webbook.nist.gov/chemistry/" target="_blank" rel="noopener">NIST Chemistry WebBook</a>. Los intervalos son aproximados y pueden cambiar con la estructura, la conjugación, los enlaces de hidrógeno, el estado físico y las condiciones de medida.</p></section>
+<div class="footer">Espectroteca IR · Proyecto educativo. Los datos de las curvas proceden de los archivos espectrales incluidos. Las asignaciones teóricas son orientativas y deben contrastarse con el patrón completo y la información experimental disponible.</div></main>
+<script>
+const GROUPS=['Alcanos','Alquenos','Alquinos','Alcoholes','Aldehídos','Cetonas','Ácidos carboxílicos','Aminas','Ésteres','Amidas'];
+const SYMBOLS={'Alcanos':'C–C','Alquenos':'C=C','Alquinos':'C≡C','Alcoholes':'O–H','Aldehídos':'CHO','Cetonas':'C=O','Ácidos carboxílicos':'COOH','Aminas':'NH₂','Ésteres':'COOR','Amidas':'CONH'};
+const THEORY={
+'Alcanos':{intro:'Presentan principalmente enlaces C–C y C–H saturados. Las señales C–H aparecen justo por debajo de 3000 cm⁻¹; las deformaciones de CH₂ y CH₃ ayudan a reconocer la cadena.',bands:[['C–H (estiramiento sp³)','2960–2850','Media a fuerte'],['CH₂ (flexión)','1475–1450','Media'],['CH₃ (flexión)','1390–1370','Media'],['Cadena larga CH₂','730–715','Variable']]},
+'Alquenos':{intro:'La señal C=C suele aparecer en la zona aproximada de 1680–1620 cm⁻¹. El estiramiento =C–H aparece por encima de 3000 cm⁻¹; las deformaciones fuera del plano pueden orientar sobre el patrón de sustitución.',bands:[['=C–H (estiramiento)','3100–3000','Media'],['C=C (estiramiento)','1680–1620','Débil a media'],['=C–H fuera del plano','1000–650','Variable']]},
+'Alquinos':{intro:'El enlace C≡C puede producir una banda en la región 2260–2100 cm⁻¹, a menudo débil y en algunos alquinos internos casi imperceptible. Los alquinos terminales también presentan ≡C–H cerca de 3300 cm⁻¹.',bands:[['≡C–H terminal','3330–3260','Aguda, fuerte'],['C≡C (estiramiento)','2260–2100','Débil a media'],['C–H alifático','2960–2850','Media']]},
+'Alcoholes':{intro:'El grupo O–H suele dar una banda ancha alrededor de 3550–3200 cm⁻¹ cuando hay puentes de hidrógeno. El enlace C–O suele absorber en la región 1260–1000 cm⁻¹.',bands:[['O–H (estiramiento)','3550–3200','Fuerte y ancha'],['C–O (estiramiento)','1260–1000','Fuerte'],['C–H alifático','2960–2850','Media']]},
+'Aldehídos':{intro:'El carbonilo C=O suele dar una banda intensa cerca de 1740–1720 cm⁻¹, con variaciones por conjugación y estructura. Puede observarse un par de bandas débiles del C–H aldehídico en la zona 2830–2695 cm⁻¹.',bands:[['C=O (estiramiento)','1740–1720','Fuerte'],['C–H aldehídico','2830–2695','Débil a media, a menudo doble'],['C–O/C–C y huella','1300–600','Variable']]},
+'Cetonas':{intro:'La señal más útil suele ser el estiramiento C=O intenso alrededor de 1725–1705 cm⁻¹ en cetonas alifáticas. La conjugación o la tensión de anillo puede desplazar la frecuencia.',bands:[['C=O (estiramiento)','1725–1705','Fuerte y aguda'],['C–H alifático','2960–2850','Media'],['Vibraciones de huella','1500–600','Patrón específico']]},
+'Ácidos carboxílicos':{intro:'Se reconocen por la combinación de C=O intenso y una banda O–H extraordinariamente ancha que puede extenderse aproximadamente entre 3300 y 2500 cm⁻¹. También pueden aparecer señales C–O.',bands:[['O–H ácido','3300–2500','Muy ancha'],['C=O (estiramiento)','1730–1700','Fuerte'],['C–O','1320–1000','Media a fuerte']]},
+'Aminas':{intro:'Las aminas primarias suelen mostrar dos señales N–H en la zona aproximada 3500–3300 cm⁻¹; las secundarias normalmente presentan una. Las terciarias no tienen enlace N–H. C–N contribuye a la región de huella.',bands:[['N–H primaria','3500–3300','Media; dos señales posibles'],['N–H secundaria','3350–3310','Media; una señal'],['C–N','1250–1020','Media a fuerte']]},
+'Ésteres':{intro:'La combinación de una banda C=O intensa, normalmente alrededor de 1750–1735 cm⁻¹ para muchos ésteres alifáticos, y señales C–O en 1300–1000 cm⁻¹ resulta especialmente útil. La conjugación puede desplazar el carbonilo.',bands:[['C=O (estiramiento)','1750–1730','Fuerte'],['C–O','1300–1000','Fuerte; varias bandas'],['C–H alifático','2960–2850','Media']]},
+'Amidas':{intro:'Las amidas presentan una banda de carbonilo (amida I) generalmente en 1690–1630 cm⁻¹ y pueden mostrar flexión N–H (amida II) cerca de 1570–1510 cm⁻¹. La presencia y cantidad de bandas N–H depende de la sustitución.',bands:[['C=O (amida I)','1690–1630','Fuerte'],['N–H (estiramiento)','3500–3200','Media; depende de sustitución'],['N–H / C–N (amida II)','1570–1510','Media a fuerte']]}}
+let all=[],activeGroup='Todos',activeId=null;const $=s=>document.querySelector(s);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function titleCaseChem(s){s=String(s||'').trim().toLocaleLowerCase('es');if(!s)return s;s=s.charAt(0).toLocaleUpperCase('es')+s.slice(1);return s.replace(/^Acido\b/, 'Ácido').replace(/^Acidos\b/, 'Ácidos');}
+const SUBSCRIPTS={'0':'₀','1':'₁','2':'₂','3':'₃','4':'₄','5':'₅','6':'₆','7':'₇','8':'₈','9':'₉'};
+function formatFormula(formula){return String(formula||'Fórmula no indicada').replace(/\s+/g,'').replace(/[0-9]/g,d=>SUBSCRIPTS[d]);}
+function formatState(state){const s=String(state||'').toUpperCase();if(/\bGAS\b/.test(s))return 'Gas';if(/LIQUID/.test(s))return 'Líquido';if(/SOLID/.test(s))return 'Sólido';if(/SOLUTION|SOLUCIÓN|SOLUCION/.test(s))return 'Solución';return state?String(state).toLocaleLowerCase('es').replace(/^./,c=>c.toLocaleUpperCase('es')):'No indicado';}
+function formulaSearchKey(formula){return String(formula||'').toLocaleLowerCase('es').replace(/[₀₁₂₃₄₅₆₇₈₉]/g,d=>String('₀₁₂₃₄₅₆₇₈₉'.indexOf(d))).replace(/\s+/g,'').replace(/[^a-z0-9]/g,'');}
+async function init(){try{all=await (await fetch('./spectra.json')).json()}catch(e){$('#catalog').innerHTML='<p>No se pudo cargar spectra.json. Abre la carpeta mediante run_local.bat o un servidor local.</p>';return}all.forEach(x=>x.displayName=titleCaseChem(x.name));renderGroups();renderCatalog();$('#search').addEventListener('input',()=>{renderCatalog();if($('#search').value.trim())$('#catalogSection').scrollIntoView({behavior:'smooth',block:'start'})});$('#sort').addEventListener('change',renderCatalog);$('#exploreBtn').onclick=()=>$('#library').scrollIntoView({behavior:'smooth'});$('#theoryBtn').onclick=()=>$('#theoryPage').scrollIntoView({behavior:'smooth',block:'start'});document.querySelectorAll('[data-scroll]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const target=document.getElementById(a.dataset.scroll);if(target)target.scrollIntoView({behavior:'smooth',block:'start'});}));}
+function renderGroups(){let counts=Object.fromEntries(GROUPS.map(g=>[g,all.filter(x=>x.group===g).length]));$('#groupCards').innerHTML=GROUPS.map(g=>`<button class="group-card ${activeGroup===g?'active':''}" data-group="${esc(g)}"><span class="formula-badge">${SYMBOLS[g]}</span><strong>${g}</strong><span class="explore">Explorar compuestos →</span></button>`).join('');document.querySelectorAll('.group-card').forEach(b=>b.onclick=()=>selectGroup(b.dataset.group));$('#groupCount').textContent=GROUPS.length+' grupos';}
+function selectGroup(g){activeGroup=g;activeId=null;renderGroups();renderCatalog();$('#catalogSection').scrollIntoView({behavior:'smooth',block:'start'});}
+function filtered(){let q=$('#search').value.trim().toLocaleLowerCase('es');let qFormula=formulaSearchKey(q);let a=all.filter(x=>(activeGroup==='Todos'||x.group===activeGroup)&&(!q||[x.displayName,x.group].join(' ').toLocaleLowerCase('es').includes(q)||formulaSearchKey(x.formula).includes(qFormula)));a.sort((x,y)=>String(x[$('#sort').value]).localeCompare(String(y[$('#sort').value]),'es',{numeric:true}));return a}
+function renderCatalog(){let a=filtered();$('#catalogTitle').textContent=activeGroup==='Todos'?'Resultados de la biblioteca':activeGroup;$('#catalogCount').textContent=a.length+' compuesto'+(a.length===1?'':'s');$('#catalog').innerHTML='';$('#noResults').classList.toggle('hide',a.length>0);a.forEach(x=>{let b=document.createElement('button');b.className='compound'+(activeId===x.id?' active':'');b.innerHTML=`<strong>${esc(x.displayName)}</strong><small class="compound-formula">${esc(formatFormula(x.formula))}</small><small class="compound-state">${esc(formatState(x.state))}</small><span class="compound-group">${esc(x.group)}</span>`;b.onclick=()=>showDetail(x.id);$('#catalog').appendChild(b)});if(activeGroup!=='Todos'){renderGroupTheory(activeGroup)}else $('#groupTheory').classList.add('hide');}
+function renderGroupTheory(g){let t=THEORY[g];$('#groupTheory').classList.remove('hide');$('#groupTheory').innerHTML=`<h3>Guía IR · ${g}</h3><p>${t.intro}</p><table class="band-table"><thead><tr><th>Banda / vibración</th><th>Intervalo (cm⁻¹)</th><th>Intensidad o forma habitual</th></tr></thead><tbody>${t.bands.map(b=>`<tr>${b.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table><p class="note">Los intervalos son orientativos: deben confirmarse con el espectro completo y con la estructura del compuesto.</p>`;}
+function getPeaks(x){let pts=(x.points||[]).filter(p=>Number.isFinite(p[0])&&Number.isFinite(p[1]));if(pts.length<3)return[];let abs=(x.yunits||'').toUpperCase().includes('ABSORBANCE');let sorted=pts.slice().sort((a,b)=>a[0]-b[0]);let candidates=[];for(let i=2;i<sorted.length-2;i++){let y=sorted[i][1],local=sorted.slice(i-2,i+3).map(p=>p[1]);let extreme=abs?y===Math.max(...local):y===Math.min(...local);if(extreme)candidates.push({x:sorted[i][0],y,score:abs?y:100-y});}candidates.sort((a,b)=>b.score-a.score);let out=[];for(let p of candidates){if(!out.some(q=>Math.abs(q.x-p.x)<35))out.push(p);if(out.length>=6)break;}return out.sort((a,b)=>b.x-a.x)}
+function assignBand(nu,g){let allBands=[['O–H','3700–3200','Estiramiento O–H'],['N–H','3500–3200','Estiramiento N–H'],['≡C–H','3330–3260','Estiramiento C–H de alquino terminal'],['C–H sp²','3100–3000','Estiramiento C–H insaturado'],['C–H sp³','3000–2850','Estiramiento C–H alifático'],['C–H aldehídico','2830–2695','Señal del C–H aldehídico'],['C≡C','2260–2100','Estiramiento de enlace triple'],['C=O','1800–1630','Estiramiento de carbonilo'],['C=C','1680–1620','Estiramiento de doble enlace'],['C–O','1320–1000','Estiramiento C–O'],['Huella dactilar','1500–400','Vibraciones combinadas propias de la molécula']];let b=allBands.find(b=>{let m=b[1].split('–').map(Number);return nu<=m[0]&&nu>=m[1]});return b?b[2]:'Vibración en la región de huella dactilar';}
+function showDetail(id){activeId=id;let x=all.find(v=>v.id===id);if(!x)return;renderCatalog();let t=THEORY[x.group],peaks=getPeaks(x);$('#detail').innerHTML=`<div class="details-top"><div><div class="eyebrow">Ficha del compuesto</div><h2>${esc(x.displayName||titleCaseChem(x.name))}</h2><div class="sub">${esc(x.group)} · Interpretación orientativa del espectro</div></div></div><div class="meta"><div><span>Fórmula molecular</span><b>${esc(formatFormula(x.formula||'No indicada'))}</b></div><div><span>Estado / fase</span><b>${esc(x.state||'No indicado')}</b></div><div><span>Puntos espectrales</span><b>${x.points?.length||0}</b></div></div><div class="chartbox"><div class="chart-title"><span>Espectro infrarrojo medio</span><div class="chart-mode" role="group" aria-label="Escala del espectro"><button type="button" id="modeT" class="active" aria-pressed="true">%T</button><button type="button" id="modeAbs" aria-pressed="false">Abs</button></div></div><div class="sub" id="chartUnits" style="margin:0 7px 9px">Número de onda (cm⁻¹) · Transmitancia (%)</div><div id="chart"></div></div><div class="interpretation"><article class="theory-card"><h3>Cómo interpretar este compuesto</h3><p>${esc(t.intro)}</p><p>Al revisar este registro, empieza por localizar las señales en las regiones descritas y compáralas con la estructura esperada de <b>${esc(x.displayName||x.name)}</b>. Una asignación es más sólida cuando varias bandas compatibles aparecen juntas y no hay señales importantes contradictorias.</p><p class="note">Esta ficha es una guía de lectura, no una identificación automática definitiva. La posición de las señales puede variar según fase, disolvente, preparación de muestra y condiciones instrumentales.</p></article><article class="theory-card"><h3>Señales destacadas en los datos</h3>${peaks.length?`<div class="peak-list">${peaks.map(p=>`<div class="peak"><b>≈ ${Math.round(p.x)} cm⁻¹</b><div>${esc(assignBand(p.x,x.group))}</div><small style="color:var(--muted)">Extremo local de la curva; confirmar con la forma y el contexto de la banda.</small></div>`).join('')}</div>`:'<p>No hay suficientes puntos para estimar señales destacadas automáticamente. Usa la tabla de bandas características como referencia.</p>'}</article></div><div class="note"><b>Fuente de los datos:</b> ${esc(x.origin||'Archivo espectral incluido en el catálogo')}${x.owner?' · '+esc(x.owner):''}. ${((x.yunits||'').toUpperCase().includes('ABSORBANCE'))?'La curva se muestra como transmitancia calculada a partir de absorbancia mediante %T = 100 × 10^(−A).':'Se representa la escala contenida en el registro original.'}</div>`;$('#modeT').onclick=()=>{chartMode='%T';renderChart(x)};$('#modeAbs').onclick=()=>{chartMode='Abs';renderChart(x)};renderChart(x);$('#detail').scrollIntoView({behavior:'smooth',block:'start'});}
+let chartMode='%T';
+function renderChart(x){
+ const sourceIsAbs=(x.yunits||'').toUpperCase().includes('ABSORBANCE');
+ let raw=(x.points||[]).filter(p=>Number.isFinite(p[0])&&Number.isFinite(p[1]));
+ const xIsMicrometers=(x.xunits||'').toUpperCase().includes('MICROMETER')||((x.xunits||'').toUpperCase().includes('MICRON'));
+ const sourceIsFraction=!sourceIsAbs&&raw.length>0&&Math.max(...raw.map(p=>p[1]))<=1.5;
+ let pts=raw.map(p=>{let y=p[1];if(chartMode==='%T'){if(sourceIsAbs)y=100*Math.pow(10,-y);else if(sourceIsFraction)y=y*100;}
+ else {if(sourceIsAbs)y=Math.max(0,y);else {let t=sourceIsFraction?y:y/100;t=Math.max(t,1e-10);y=-Math.log10(t);}}let nu=xIsMicrometers&&p[0]>0?10000/p[0]:p[0];return[nu,y];});
+ if(pts.length<2){$('#chart').innerHTML='<p>No hay suficientes datos numéricos para dibujar la curva.</p>';return}
+ $('#modeT').classList.toggle('active',chartMode==='%T');$('#modeAbs').classList.toggle('active',chartMode==='Abs');$('#modeT').setAttribute('aria-pressed',String(chartMode==='%T'));$('#modeAbs').setAttribute('aria-pressed',String(chartMode==='Abs'));
+ $('#chartUnits').textContent=(x.xunits||'cm⁻¹')+' · '+(chartMode==='%T'?'Transmitancia (%)':'Absorbancia');
+ let xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]),xmin=500,xmax=4000,ymin=Math.min(...ys),ymax=Math.max(...ys);if(ymax===ymin)ymax=ymin+1;
+ let W=920,H=410,L=70,R=22,T=20,B=54,pw=W-L-R,ph=H-T-B;const X=v=>L+(xmax-v)/(xmax-xmin)*pw,Y=v=>T+(ymax-v)/(ymax-ymin)*ph;
+ let path=pts.map((p,i)=>(i?'L':'M')+X(p[0]).toFixed(2)+' '+Y(p[1]).toFixed(2)).join(' '),grid='';
+ for(let i=0;i<=5;i++){let y=T+i*ph/5,val=ymax-i*(ymax-ymin)/5;grid+=`<line x1="${L}" y1="${y}" x2="${W-R}" y2="${y}" stroke="#382130"/><text x="${L-10}" y="${y+4}" text-anchor="end" font-size="11" fill="#c4aab8">${Number(val.toPrecision(4))}</text>`;let xv=xmax-i*(xmax-xmin)/5,xx=X(xv);grid+=`<line x1="${xx}" y1="${T}" x2="${xx}" y2="${H-B}" stroke="#241721"/><text x="${xx}" y="${H-B+22}" text-anchor="middle" font-size="11" fill="#c4aab8">${Math.round(xv)}</text>`}
+ $('#chart').innerHTML=`<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Espectro IR de ${esc(x.displayName||x.name)} en ${chartMode==='Abs'?'absorbancia':'transmitancia'}"><defs><clipPath id="spectrumClip"><rect x="${L}" y="${T}" width="${pw}" height="${ph}"/></clipPath></defs><rect width="100%" height="100%" rx="9" fill="#0b0b10"/>${grid}<path clip-path="url(#spectrumClip)" d="${path}" fill="none" stroke="#f06aa8" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><line x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}" stroke="#7b5268"/><text x="${L+pw/2}" y="${H-12}" text-anchor="middle" font-size="12" fill="#e6c8d8">Número de onda (cm⁻¹; decreciente hacia la derecha)</text><text x="18" y="${T+ph/2}" transform="rotate(-90 18 ${T+ph/2})" text-anchor="middle" font-size="12" fill="#e6c8d8">${chartMode==='Abs'?'Absorbancia':'Transmitancia (%)'}</text></svg>`;
+}
+init();
+</script></body></html>
